@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brendin's World</title>
+  <link href="https://fonts.googleapis.com/css?family=Megrim|Syncopate|Unica+One" rel="stylesheet">
   <link rel="stylesheet" href="vendors/css/bootstrap.css">
   <link rel="stylesheet" href="vendors/css/bootstrap-theme.css">
   <link rel="stylesheet" href="styles/main.css">
@@ -15,39 +16,26 @@
 
 <body ng-app="myApp" class="container">
   <div ng-controller="WorldController as world">
+    <div id="header">
     <h1>{{world.title}}</h1>
-
-    <div class="row" id="rowA">
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/xmas.jpg">
-        <button ng-click="">Like</button>
-      </div>
-
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/love.jpg">
-        <button ng-click="">Like</button>
-      </div>
-
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/july.jpg">
-        <button ng-click="">Like</button>
-      </div>
     </div>
+    <div class="gallery">
+      <div class="col-md-4" align="center" ng-repeat="pic in world.img">
+        <div class="imageContainer">
+          <img class="pics" class="img-responsive" ng-click="world.toggleShow($index)" ng-show="pic.visible" ng-src="{{pic.pic}}">
+          <p class="description" ng-click="world.toggleShow($index)" ng-hide="pic.visible">{{pic.desc}}</p>
+        </div>
+        <div class="extras">
 
-    <div class="row" id="rowb">
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/aj_brendin_tony.jpg">
-        <button ng-click="">Like</button>
-      </div>
 
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/atwrestling.jpg">
-        <button ng-click="">Like</button>
-      </div>
+          <button ng-click="count = count + 1"  ng-init="count=0" class=" like btn btn-info">
+            <span>Like</span>
 
-      <div class="col-md-4">
-        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/mick_foley.jpg">
-        <button ng-click="">Like</button>
+          </button>
+          <p class="likeCount">
+            {{count}} like's so far!!.
+          </p>
+        </div>
       </div>
     </div>
   </div>

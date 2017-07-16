@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brendin's World</title>
+  <link rel="stylesheet" href="vendors/css/bootstrap.css">
+  <link rel="stylesheet" href="vendors/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="vendors/angular.js" charset="utf-8"></script>
+  <script src="scripts/client.js" charset="utf-8"></script>
+</head>
+
+<body ng-app="myApp" class="container">
+  <div ng-controller="WorldController as world">
+    <h1>{{world.title}}</h1>
+
+    <div class="row" id="rowA">
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/xmas.jpg">
+        <button ng-click="">Like</button>
+      </div>
+
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/love.jpg">
+        <button ng-click="">Like</button>
+      </div>
+
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/july.jpg">
+        <button ng-click="">Like</button>
+      </div>
+    </div>
+
+    <div class="row" id="rowb">
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/aj_brendin_tony.jpg">
+        <button ng-click="">Like</button>
+      </div>
+
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/atwrestling.jpg">
+        <button ng-click="">Like</button>
+      </div>
+
+      <div class="col-md-4">
+        <img class="pics" class="img-responsive" alt="Responsive image" ng-src="../images/mick_foley.jpg">
+        <button ng-click="">Like</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
